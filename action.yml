@@ -5,6 +5,9 @@ inputs:
   github-token:
     description: The `GITHUB_TOKEN` secret.
     required: true
+  milliseconds:
+    description: Amount of time to wait before merging PRs.
+    default: 0
 runs:
   using: "node12"
   main: "lib/main.js"

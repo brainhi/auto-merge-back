@@ -1,11 +1,13 @@
-const core = require("@actions/core");
-const github = require("@actions/github");
+import * as core from "@actions/core";
+import * as github from "@actions/github";
+import { wait } from "./wait";
 
 const token = core.getInput("github-token", { required: true }),
   context = github.context,
   owner = context.repo.owner,
   repo = context.repo.repo,
-  client = new github.GitHub(token);
+  client = new github.GitHub(token),
+  ms = core.getInput("milliseconds");
 
 async function run() {
   try {
@@ -51,6 +53,8 @@ async function push(base) {
     console.log(`Pull request #${pull_number} created.`);
     core.debug(JSON.stringify(creationData));
   }
+  console.log(`waiting ${ms} milliseconds before merging #${pull_number}`);
+  await wait(parseInt(ms, 10));
   await merge(pull_number);
 }
 
