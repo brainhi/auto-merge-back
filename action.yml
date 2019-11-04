@@ -1,10 +1,7 @@
-name: 'Your name here'
-description: 'Provide a description here'
-author: 'Your name or organization here'
+name: "AutoMergeBack"
+description: "Auto creates PRs from master against dev and demo on a push"
+author: "BrainHi"
 inputs:
-  myInput:              # change this
-    description: 'input description here'
-    default: 'default value if applicable'
 runs:
-  using: 'node12'
-  main: 'lib/main.js'
+  using: "node12"
+  main: "lib/main.js"
