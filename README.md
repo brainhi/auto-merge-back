@@ -5,28 +5,13 @@ This repo should make our deploying lives a bit better
 ## Code in Master
 
 Install the dependencies
-
-```bash
-$ npm install
-```
-
 Build the typescript
-
-```bash
-$ npm run build
-```
-
 Run the tests :heavy_check_mark:
 
 ```bash
+$ npm install
+$ npm run build
 $ npm test
-
- PASS  ./index.test.js
-  ✓ throws invalid number (3ms)
-  ✓ wait 500 ms (504ms)
-  ✓ test runs (95ms)
-
-...
 ```
 
 ## Publish to a distribution branch
