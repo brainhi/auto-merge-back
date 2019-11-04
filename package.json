@@ -1,8 +1,8 @@
 {
-  "name": "typescript-action",
-  "version": "0.0.0",
+  "name": "auto-merge-back",
+  "version": "1.0.0",
   "private": true,
-  "description": "TypeScript template action",
+  "description": "Action that automatically created and merged PRs from master -> (dev,demo) branches",
   "main": "lib/main.js",
   "scripts": {
     "build": "tsc",
@@ -10,14 +10,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/actions/typescript-action.git"
+    "url": "git+https://github.com/brainhi/auto-merge-back.git"
   },
   "keywords": [
     "actions",
     "node",
     "setup"
   ],
-  "author": "YourNameOrOrganization",
+  "author": "BrainHi",
   "license": "MIT",
   "dependencies": {
     "@actions/core": "1.2.0",
