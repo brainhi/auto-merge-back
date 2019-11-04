@@ -1,20 +1,13 @@
-name: "Test typescript-action"
+name: "Test auto-merge-back"
 on:
-  pull_request:
   push:
     branches:
       - master
-      - 'releases/*'
 
 jobs:
-  test:
+  build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v1
-
-    - run: npm ci
-    - run: npm run build
-    - run: npm test
-    - uses: ./
-      with: 
-        milliseconds: 1000
+      - uses: brainhi/auto-merge-back@releases/v0.5
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }} # The `GITHUB_TOKEN` secret.
