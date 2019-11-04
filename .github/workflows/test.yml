@@ -8,6 +8,6 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: brainhi/auto-merge-back@releases/v0.4
+      - uses: brainhi/auto-merge-back@releases/v0.5
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }} # The `GITHUB_TOKEN` secret.
