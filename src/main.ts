@@ -23,9 +23,8 @@ async function run() {
   }
 }
 
-async function push(target) {
-  const head = "master",
-    base = target;
+async function push(base) {
+  const head = "master";
   const pulls = await client.pulls.list({
     base,
     head: `${owner}:${head}`,
@@ -38,7 +37,7 @@ async function push(target) {
   if (pulls.data.length == 1) {
     const data = pulls.data[0];
     pull_number = data.number;
-    console.log(`Pull request already exists: #${pull_number}.`);
+    console.log(`Pull request already exists for ${base}: #${pull_number}.`);
   } else {
     const creationResponse = await client.pulls.create({
         base,
