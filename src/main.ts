@@ -38,7 +38,7 @@ async function push(target) {
   if (pulls.data.length == 1) {
     const data = pulls.data[0];
     pull_number = data.number;
-    core.info(`Pull request already exists: #${pull_number}.`);
+    console.log(`Pull request already exists: #${pull_number}.`);
   } else {
     const creationResponse = await client.pulls.create({
         base,
@@ -49,7 +49,7 @@ async function push(target) {
       }),
       creationData = creationResponse.data;
     pull_number = creationData.number;
-    core.info(`Pull request #${pull_number} created.`);
+    console.log(`Pull request #${pull_number} created.`);
     core.debug(JSON.stringify(creationData));
   }
   await merge(pull_number);
@@ -62,10 +62,10 @@ async function merge(pull_number) {
       pull_number,
       repo
     });
-    core.info(`Pull request #${pull_number} merged.`);
+    console.log(`Pull request #${pull_number} merged.`);
     core.debug(JSON.stringify(mergeResponse.data));
   } catch (err) {
-    core.info("Merge failed.");
+    console.log("Merge failed.");
     core.debug(err);
   }
 }

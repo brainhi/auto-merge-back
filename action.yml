@@ -2,6 +2,9 @@ name: "AutoMergeBack"
 description: "Auto creates PRs from master against dev and demo on a push"
 author: "BrainHi"
 inputs:
+  github-token:
+    description: The `GITHUB_TOKEN` secret.
+    required: true
 runs:
   using: "node12"
   main: "lib/main.js"
