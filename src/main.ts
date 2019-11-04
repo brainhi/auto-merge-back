@@ -3,11 +3,11 @@ import github from "@actions/github";
 import { wait } from "./wait";
 
 const token = core.getInput("github-token", { required: true }),
-  ms = core.getInput("milliseconds"),
   context = github.context,
   owner = context.repo.owner,
   repo = context.repo.repo,
-  client = new github.GitHub(token);
+  client = new github.GitHub(token),
+  ms = core.getInput("milliseconds");
 
 async function run() {
   try {
